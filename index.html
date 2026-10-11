@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent Institute of Computer Education | Demo</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        skyBlue: '#38BDF8',
+                        aqua: '#22D3EE',
+                        deepNavy: '#0F172A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        /* Mobile menu transition */
+        #mobile-menu { transition: max-height 0.3s ease-in-out; max-height: 0; overflow: hidden; }
+        #mobile-menu.open { max-height: 400px; }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-gray-50 antialiased overflow-x-hidden">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <div class="flex flex-col">
+                        <span class="text-deepNavy font-extrabold text-2xl leading-none tracking-tight">TALENT INSTITUTE</span>
+                        <span class="text-skyBlue font-medium text-xs tracking-widest mt-1">OF COMPUTER EDUCATION</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-deepNavy font-medium hover:text-skyBlue transition-colors">Home</a>
+                    <a href="#about" class="text-gray-500 font-medium hover:text-skyBlue transition-colors">About</a>
+                    <a href="#courses" class="text-gray-500 font-medium hover:text-skyBlue transition-colors">Courses</a>
+                    <a href="#results" class="text-gray-500 font-medium hover:text-skyBlue transition-colors">Results</a>
+                    <a href="#verify" class="text-gray-500 font-medium hover:text-skyBlue transition-colors">Certificate Verification</a>
+                    <a href="#login" class="text-gray-500 font-medium hover:text-skyBlue transition-colors">Login</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#contact" class="bg-skyBlue hover:bg-aqua text-white font-semibold rounded-full px-6 py-2.5 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Enquire Now
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-deepNavy hover:text-skyBlue focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#" class="block px-3 py-2 text-deepNavy font-medium rounded-md hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-500 font-medium rounded-md hover:bg-gray-50">About</a>
+                <a href="#courses" class="block px-3 py-2 text-gray-500 font-medium rounded-md hover:bg-gray-50">Courses</a>
+                <a href="#results" class="block px-3 py-2 text-gray-500 font-medium rounded-md hover:bg-gray-50">Results</a>
+                <a href="#verify" class="block px-3 py-2 text-gray-500 font-medium rounded-md hover:bg-gray-50">Certificate</a>
+                <a href="#login" class="block px-3 py-2 text-gray-500 font-medium rounded-md hover:bg-gray-50">Login</a>
+                <a href="#contact" class="block mt-4 text-center bg-skyBlue text-white font-semibold rounded-full px-6 py-2 shadow-md">Enquire Now</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative bg-gradient-to-br from-white via-white to-skyBlue/10 pt-16 pb-32 lg:pt-24 lg:pb-40 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-deepNavy leading-tight mb-6">
+                        Build Your Future with <span class="text-transparent bg-clip-text bg-gradient-to-r from-skyBlue to-aqua">Computer Education</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+                        Learn practical computer skills, explore career-focused courses, and take the next step toward your professional goals with our industry-relevant curriculum.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#courses" class="bg-skyBlue hover:bg-aqua text-white font-semibold rounded-full px-8 py-3.5 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-center">
+                            Explore Courses
+                        </a>
+                        <a href="#results" class="bg-transparent border-2 border-deepNavy text-deepNavy hover:bg-deepNavy hover:text-white font-semibold rounded-full px-8 py-3.5 transition-all duration-300 text-center">
+                            View Results
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="relative mt-10 lg:mt-0">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-skyBlue to-aqua rounded-3xl transform translate-x-4 translate-y-4 opacity-30"></div>
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Students in Computer Lab" class="relative rounded-3xl shadow-2xl w-full object-cover h-[400px] lg:h-[500px]">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                        <div class="bg-aqua/20 p-3 rounded-full text-aqua">
+                            <i class="fas fa-laptop-code text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-deepNavy">Practical Learning</p>
+                            <p class="text-xs text-gray-500">100% Hands-on</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background decorative blob -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-aqua/5 blur-3xl z-0"></div>
+    </section>
+
+    <section class="relative z-20 -mt-20 lg:-mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card 1 -->
+            <a href="#courses" class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-50 group flex flex-col items-center text-center">
+                <div class="w-14 h-14 bg-skyBlue/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-skyBlue transition-colors duration-300">
+                    <i class="fas fa-book-open text-2xl text-skyBlue group-hover:text-white transition-colors duration-300"></i>
+                </div>
+                <h3 class="font-bold text-deepNavy text-lg mb-2">Explore Courses</h3>
+                <p class="text-sm text-gray-500">Find the perfect program to boost your career.</p>
+            </a>
+            <!-- Card 2 -->
+            <a href="#results" class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-50 group flex flex-col items-center text-center">
+                <div class="w-14 h-14 bg-aqua/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-aqua transition-colors duration-300">
+                    <i class="fas fa-chart-line text-2xl text-aqua group-hover:text-white transition-colors duration-300"></i>
+                </div>
+                <h3 class="font-bold text-deepNavy text-lg mb-2">Check Results</h3>
+                <p class="text-sm text-gray-500">View your examination scores and performance.</p>
+            </a>
+            <!-- Card 3 -->
+            <a href="#verify" class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-50 group flex flex-col items-center text-center">
+                <div class="w-14 h-14 bg-skyBlue/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-skyBlue transition-colors duration-300">
+                    <i class="fas fa-shield-alt text-2xl text-skyBlue group-hover:text-white transition-colors duration-300"></i>
+                </div>
+                <h3 class="font-bold text-deepNavy text-lg mb-2">Verify Certificate</h3>
+                <p class="text-sm text-gray-500">Authenticate online issued course certificates.</p>
+            </a>
+            <!-- Card 4 -->
+            <a href="#login" class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-50 group flex flex-col items-center text-center">
+                <div class="w-14 h-14 bg-aqua/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-aqua transition-colors duration-300">
+                    <i class="fas fa-user-graduate text-2xl text-aqua group-hover:text-white transition-colors duration-300"></i>
+                </div>
+                <h3 class="font-bold text-deepNavy text-lg mb-2">Student Login</h3>
+                <p class="text-sm text-gray-500">Access your personalized dashboard and study materials.</p>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-skyBlue font-bold tracking-wider uppercase text-sm">About The Institute</span>
+                <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-deepNavy mb-6">Learn Today. Grow Tomorrow.</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-skyBlue to-aqua mx-auto rounded-full mb-8"></div>
+                <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                    At Talent Institute of Computer Education, we are dedicated to providing high-quality, practical computer training. Our curriculum is designed to bridge the gap between traditional education and industry requirements. Whether you are starting with basic computer fundamentals or looking to master advanced web development, we provide the environment, resources, and expert guidance you need to develop essential skills and advance your career.
+                </p>
+                <a href="#contact" class="inline-flex items-center text-deepNavy font-bold hover:text-skyBlue transition-colors group">
+                    Know About Us 
+                    <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="py-16 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <span class="text-aqua font-bold tracking-wider uppercase text-sm">Our Programs</span>
+                    <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-deepNavy">Popular Courses</h2>
+                </div>
+                <a href="#" class="hidden sm:inline-block bg-white border border-gray-200 text-deepNavy font-semibold rounded-full px-6 py-2 hover:bg-gray-50 hover:shadow transition-all">
+                    View All Courses
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Course 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-xl transition-shadow duration-300 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Computer Fundamentals" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-deepNavy">Beginner</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-deepNavy mb-2">Computer Fundamentals</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex-grow">Basic operations, typing, and understanding computer hardware and operating systems.</p>
+                        <a href="#" class="text-skyBlue font-semibold hover:text-deepNavy transition-colors inline-flex items-center">
+                            View Course Details <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-xl transition-shadow duration-300 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="MS Office" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-deepNavy">Essential</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-deepNavy mb-2">MS Office Mastery</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex-grow">Comprehensive training in Word, Excel, and PowerPoint for office productivity.</p>
+                        <a href="#" class="text-skyBlue font-semibold hover:text-deepNavy transition-colors inline-flex items-center">
+                            View Course Details <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-xl transition-shadow duration-300 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Designing" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-deepNavy">Advanced</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-deepNavy mb-2">Web Designing</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex-grow">Learn HTML, CSS, JavaScript and design responsive, beautiful modern websites.</p>
+                        <a href="#" class="text-skyBlue font-semibold hover:text-deepNavy transition-colors inline-flex items-center">
+                            View Course Details <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-xl transition-shadow duration-300 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Advanced Computer" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-deepNavy">Pro</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-deepNavy mb-2">Advanced Software</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex-grow">In-depth training in specialized software, database management, and networking.</p>
+                        <a href="#" class="text-skyBlue font-semibold hover:text-deepNavy transition-colors inline-flex items-center">
+                            View Course Details <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10 text-center sm:hidden">
+                <a href="#" class="inline-block bg-white border border-gray-200 text-deepNavy font-semibold rounded-full px-8 py-3 shadow-sm">
+                    View All Courses
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Student Results Panel -->
+                <div id="results" class="bg-gradient-to-br from-white to-skyBlue/5 border border-skyBlue/20 rounded-3xl p-8 shadow-soft relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-skyBlue/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="bg-skyBlue/20 p-3 rounded-xl text-skyBlue">
+                                <i class="fas fa-award text-xl"></i>
+                            </div>
+                            <h2 class="text-2xl font-extrabold text-deepNavy">Student Results & Achievements</h2>
+                        </div>
+                        
+                        <form class="space-y-5" onsubmit="event.preventDefault();">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Enter Roll Number</label>
+                                <input type="text" placeholder="e.g. TICE-2024-001" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-skyBlue focus:border-skyBlue outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Select Course or Examination</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-skyBlue focus:border-skyBlue outline-none transition-all appearance-none bg-white">
+                                    <option>Select Option...</option>
+                                    <option>Computer Fundamentals - Final</option>
+                                    <option>MS Office - Mid Term</option>
+                                    <option>Web Designing - Practical</option>
+                                </select>
+                            </div>
+                            <button type="button" class="w-full bg-deepNavy hover:bg-gray-800 text-white font-semibold rounded-xl px-4 py-3.5 transition-all duration-300 shadow-md">
+                                Search Result
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 flex justify-between items-center text-sm">
+                            <span class="text-gray-400 italic">* All data shown is for demonstration purposes only.</span>
+                            <a href="#" class="text-skyBlue font-semibold hover:underline">View All Results</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate Verification -->
+                <div id="verify" class="bg-gradient-to-br from-white to-aqua/5 border border-aqua/20 rounded-3xl p-8 shadow-soft relative overflow-hidden">
+                    <div class="absolute bottom-0 right-0 w-40 h-40 bg-aqua/10 rounded-full blur-2xl -mr-10 -mb-10"></div>
+                    <div class="relative z-10 h-full flex flex-col">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="bg-aqua/20 p-3 rounded-xl text-aqua">
+                                <i class="fas fa-certificate text-xl"></i>
+                            </div>
+                            <h2 class="text-2xl font-extrabold text-deepNavy">Verify Your Certificate Online</h2>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-8">
+                            Employers and organizations can instantly verify the authenticity of certificates issued by Talent Institute of Computer Education using our secure online portal.
+                        </p>
+
+                        <form class="space-y-5 flex-grow" onsubmit="event.preventDefault();">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Enter Certificate Number</label>
+                                <div class="relative">
+                                    <input type="text" placeholder="e.g. CERT-987654321" class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-aqua focus:border-aqua outline-none transition-all">
+                                    <i class="fas fa-shield-alt absolute left-3.5 top-3.5 text-gray-400"></i>
+                                </div>
+                            </div>
+                            <button type="button" class="w-full bg-aqua hover:bg-teal-400 text-white font-semibold rounded-xl px-4 py-3.5 transition-all duration-300 shadow-md mt-4">
+                                Verify Certificate
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 p-3 bg-green-50 text-green-700 text-sm rounded-lg flex items-start gap-2">
+                            <i class="fas fa-info-circle mt-0.5"></i>
+                            <span>This is a visual demo. Real verification queries securely match against our encrypted institute database.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="login" class="py-16 lg:py-24 bg-deepNavy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-md mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl relative">
+                <!-- Top decorative bar -->
+                <div class="h-2 w-full bg-gradient-to-r from-skyBlue to-aqua"></div>
+                
+                <div class="p-8">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-skyBlue/10 text-skyBlue mb-4">
+                            <i class="fas fa-user-lock text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-extrabold text-deepNavy">Student Login</h2>
+                        <p class="text-sm text-gray-500 mt-1">Access your learning portal</p>
+                    </div>
+
+                    <form class="space-y-5" onsubmit="event.preventDefault();">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Username / Student ID</label>
+                            <input type="text" placeholder="Your ID" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-skyBlue focus:border-skyBlue outline-none transition-all text-gray-800">
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <label class="block text-sm font-medium text-gray-700">Password</label>
+                                <a href="#" class="text-xs text-skyBlue hover:underline">Forgot?</a>
+                            </div>
+                            <input type="password" placeholder="••••••••" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-skyBlue focus:border-skyBlue outline-none transition-all text-gray-800">
+                        </div>
+                        
+                        <button type="button" class="w-full bg-skyBlue hover:bg-aqua text-white font-bold rounded-xl px-4 py-3.5 transition-all duration-300 shadow-md">
+                            Login to Dashboard
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Institute Access link for staff -->
+                <div class="bg-gray-50 p-4 border-t border-gray-100 text-center">
+                    <a href="#" class="text-xs font-semibold text-gray-500 hover:text-deepNavy transition-colors flex items-center justify-center gap-1">
+                        <i class="fas fa-cog"></i> Result Upload / Institute Access (Staff Only)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-deepNavy">Why Choose Talent Institute?</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-gray-50 transition-colors">
+                    <div class="w-16 h-16 bg-skyBlue/10 rounded-full flex items-center justify-center mb-4 text-skyBlue">
+                        <i class="fas fa-laptop text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-deepNavy mb-2">Practical Computer Learning</h3>
+                    <p class="text-gray-600">Focus on hands-on sessions in modern labs rather than just theoretical concepts, ensuring real-world readiness.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-gray-50 transition-colors">
+                    <div class="w-16 h-16 bg-aqua/10 rounded-full flex items-center justify-center mb-4 text-aqua">
+                        <i class="fas fa-bullseye text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-deepNavy mb-2">Career-Focused Courses</h3>
+                    <p class="text-gray-600">Curriculum designed by experts to align with current industry demands and enhance employability.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-gray-50 transition-colors">
+                    <div class="w-16 h-16 bg-skyBlue/10 rounded-full flex items-center justify-center mb-4 text-skyBlue">
+                        <i class="fas fa-mobile-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-deepNavy mb-2">Convenient Student Services</h3>
+                    <p class="text-gray-600">Access results, verify certificates, and manage your learning journey easily through our digital portals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-deepNavy text-white pt-16 pb-8 border-t-4 border-skyBlue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="col-span-1 lg:col-span-1">
+                    <div class="mb-4 flex flex-col">
+                        <span class="text-white font-extrabold text-2xl leading-none tracking-tight">TALENT INSTITUTE</span>
+                        <span class="text-skyBlue font-medium text-xs tracking-widest mt-1">OF COMPUTER EDUCATION</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Empowering students with practical, industry-ready computer skills for a brighter, digital future.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-skyBlue hover:text-white transition-all"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-skyBlue hover:text-white transition-all"><i class="fab fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-skyBlue hover:text-white transition-all"><i class="fab fa-twitter text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-gray-700 pb-2">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-skyBlue transition-colors"><i class="fas fa-angle-right mr-2 text-skyBlue"></i> Home</a></li>
+                        <li><a href="#about" class="hover:text-skyBlue transition-colors"><i class="fas fa-angle-right mr-2 text-skyBlue"></i> About Us</a></li>
+                        <li><a href="#courses" class="hover:text-skyBlue transition-colors"><i class="fas fa-angle-right mr-2 text-skyBlue"></i> Courses</a></li>
+                        <li><a href="#results" class="hover:text-skyBlue transition-colors"><i class="fas fa-angle-right mr-2 text-skyBlue"></i> Results</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-gray-700 pb-2">Student Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#verify" class="hover:text-skyBlue transition-colors"><i class="fas fa-angle-right mr-2 text-skyBlue"></i> Certificate Verification</a></li>
+                        <li><a href="#login" class="hover:text-skyBlue transition-colors"><i class="fas fa-angle-right mr-2 text-skyBlue"></i> Student Login</a></li>
+                        <li><a href="#" class="hover:text-skyBlue transition-colors"><i class="fas fa-angle-right mr-2 text-skyBlue"></i> Result Upload (Staff)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-gray-700 pb-2">Contact Us</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-skyBlue"></i>
+                            <span>7589434145</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-3 text-green-400 text-lg"></i>
+                            <span>7589434145 (WhatsApp Enquiry)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-skyBlue"></i>
+                            <a href="mailto:harshdeepdeveloper@gmail.com" class="hover:text-white transition-colors">harshdeepdeveloper@gmail.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe mt-1 mr-3 text-skyBlue"></i>
+                            <a href="https://hdwebstudios.in" target="_blank" class="hover:text-white transition-colors">https://hdwebstudios.in</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-skyBlue"></i>
+                            <span>[Placeholder Local Address], City, State, India</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Credit Bar -->
+            <div class="pt-8 border-t border-gray-800 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">
+                    &copy; <script>document.write(new Date().getFullYear())</script> Talent Institute of Computer Education. All Rights Reserved.
+                </p>
+                <p class="text-gray-400 text-sm bg-gray-800/50 px-4 py-2 rounded-full">
+                    Demo by <a href="https://hdwebstudios.in" target="_blank" class="text-skyBlue font-bold hover:text-white transition-colors">HD Web Studios</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('open');
+            // Toggle icon
+            const icon = btn.querySelector('i');
+            if(menu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu on link click
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('open');
+                const icon = btn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>
